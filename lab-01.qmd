@@ -37,9 +37,17 @@ The answer 1e changed into P\*P.
 ### Exercise 7
 
 ```{r}
+ikea <- read_csv("data/ikea.csv")
+```
+
+```{r}
 #| label: ex-07
 
-# add code here
+ggplot(data = ikea, aes(x = price_usd)) +
+  geom_histogram() +
+  labs(x = "price in usd",
+       y = "number", 
+       title = "The distribution of price in usd")
 
 ```
 
@@ -49,7 +57,7 @@ The answer 1e changed into P\*P.
 
 ### Exercise 8
 
-...
+The distribution is skewed to the left, and there are some outliers that will affect the mean to be larger than the median.
 
 \pagebreak
 
