@@ -51,22 +51,45 @@ ggplot(data = ikea, aes(x = price_usd)) +
 
 ```
 
-...
-
 \pagebreak
 
 ### Exercise 8
 
 The distribution is skewed to the left, and there are some outliers that will affect the mean to be larger than the median.
 
-\pagebreak
-
 ### Exercise 9
 
-...
+```{r}
+ikea_sub <- ikea |>
+  filter(category %in% c( "Sofas & armchairs",
+                       "Bookcases & shelving units"))
+
+ikea_sub <- ikea_sub |>
+  drop_na(width, price_usd)
+```
+
+a\. There is 765 observations in ikea_sub dataframe, and there are 13 variables.
+
+b\. The advantage of complete case analysis is it made further operations more convenient so that there won't be any errors. A disadvantage of complete case analysis is that it might drop out too many elements so that it creates a biased result.
 
 \pagebreak
 
 ### Exercise 10
 
-...
+```{r}
+#| label: plot-exercise-10
+#| fig-cap: "The dataset shows a relatively positive relationship between width and price in usd."
+ggplot(data = ikea_sub, aes(x = width, y = price_usd))+
+  geom_point() +
+  labs(x = "price in usd",
+       y = "width")
+```
+
+```{r}
+#| label: ex-10-colored
+#| fig-cap: "Both categories shows a relatively positive relationship between price in usd and width, but the sofas & armchairs category shows a steeper slope, meaning a greater change in price when the width changes."
+ggplot(data = ikea_sub, aes(x = width, y = price_usd, color = category, shape = category))+
+  geom_point() +
+  labs(x = "price in usd",
+       y = "width")
+```
