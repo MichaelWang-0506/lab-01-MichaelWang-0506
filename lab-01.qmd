@@ -26,43 +26,11 @@ ikea <- read_csv("data/ikea.csv")
 
 ## Linear algebra review
 
-\[Delete the placeholders for Exercises 1 - 6 if you are submitting handwritten responses for these exercises\]
+```{r}
+knitr::include_graphics("exercise1.jpg")
+```
 
-### Exercise 1
-
-...
-
-\pagebreak
-
-### Exercise 2
-
-...
-
-\pagebreak
-
-### Exercise 3
-
-...
-
-\pagebreak
-
-### Exercise 4
-
-...
-
-\pagebreak
-
-### Exercise 5
-
-...
-
-\pagebreak
-
-### Exercise 6
-
-...
-
-\pagebreak
+The answer 1e changed into P\*P.
 
 ## Computing review
 
